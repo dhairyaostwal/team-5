@@ -1,11 +1,11 @@
+import { DomPlatform } from "chart.js";
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
 
+import {Link} from 'react-router-dom';
+
 
 const Signup = () => {
-
-    
-  
 
   const inputs = [
     {
@@ -43,11 +43,9 @@ const Signup = () => {
     {
       id: "user_cpass",
       icon: "fa-solid fa-lock",
-      name: "link",
-      type: "url",
-      placeholder: "LinkedIn url",
-     
-     
+      name: "referralByCode",
+      type: "text",
+      placeholder: "Referral Code",
     },
   ];
   
@@ -83,8 +81,6 @@ const Signup = () => {
                   autoComplete="off"
                   
                 />
-            
-            
               </div>
                 
               ))}
@@ -96,14 +92,12 @@ const Signup = () => {
                   name="signup"
                   id="signup"
                   className="form-submit"
-                  value="Register"
-        
-                  
+                  value="Next"
                 />
               </div>
               <div className="form-group">
                 <p>
-                  Already have an account?<a href="./Login">Login</a> 
+                  Already have an account?<Link to = "/login">Login</Link> 
                 </p>
               </div>
             </form>
