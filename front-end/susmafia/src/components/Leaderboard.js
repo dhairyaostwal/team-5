@@ -1,27 +1,54 @@
 import React from 'react';
+import { GiRank3,GiRank2,GiRank1 } from "react-icons/gi";
+import './Leaderboard.css';
 
 const Leaderboard = () => {
-  return (
-    <div>
-      <h1>Top 10 Entrepreneurs</h1>
-
-      <div>
-        <table>
-          <tr>
-            <td>Rank</td>
-            <td>Name</td>
-            <td>Sector</td>
-            <td>SusDAO</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Dhairya</td>
-            <td>Software</td>
-            <td>10000</td>
-          </tr>
-        </table>
-      </div>
-    </div>
+  return ( 
+    <div className='m-5 text-center'>
+  <table  className="table text-center border border-secondary">
+    <thead class="thead-dark">
+      <tr class ="bg-primary">
+        <th scope="col">Rank</th>
+        <th scope="col">Name</th>
+        <th scope="col">Points</th>
+        <th scope="col">Field</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="">
+        <th scope="row"><GiRank3  size={40}/></th>
+        <td>Ram</td>
+        <td>40</td>
+        <td>Technology</td>
+      </tr>
+      <tr class="">
+        <th scope="row"><GiRank2  size={40}/></th>
+        <td>Jacob</td>
+        <td>30</td>
+        <td>Energy</td>
+      </tr>
+      <tr class="">
+        <th scope="row"><GiRank1  size={40}/></th>
+        <td>Larry</td>
+        <td>26</td>
+        <td>Technology</td>
+      </tr>
+      <tr>
+        <th scope="row" className=''>4</th>
+        <td>Larry</td>
+        <td>26</td>
+        <td>Technology</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Larry</td>
+        <td>26</td>
+        <td>investor</td>
+      </tr>
+    </tbody>
+  </table>
+     </div>
+  
   );
 };
 
