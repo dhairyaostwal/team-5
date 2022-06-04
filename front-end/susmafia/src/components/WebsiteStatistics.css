@@ -1,0 +1,12 @@
+.WebsiteStatistics--container {
+  background-color: #212121;
+  width: 30rem;
+  height: auto;
+  padding: 1% 1%;
+  color: #fff;
+}
+
+.fa-solid {
+  color: #00ff00;
+  font-weight: 800;
+}
