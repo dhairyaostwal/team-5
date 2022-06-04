@@ -67,7 +67,7 @@ function App() {
           <Route path="/viewprofile" element={<ViewProfile />} />
           <Route path="/linkedinupload" element={<LinkedInFileUpload />} />
           <Route path="/contacts" element={<Contacts />} />
-          <Route path="/" element={<Signup />} />
+          <Route path="/" element={<Signup/>} />
         </Routes>
       </div>
     </Router>

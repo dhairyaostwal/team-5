@@ -28,6 +28,8 @@ export default function Login({handleLogin}) {
 
       e.preventDefault()
 
+      console.log(login)
+
       const url = 'http://127.0.0.1:8000/api/auth/'
       fetch(url,{
           method:'POST',
@@ -65,10 +67,7 @@ export default function Login({handleLogin}) {
   return (
     <>
       <section className="login">
-       
-
         <div className="login-content">
-          
           <div className="login-form">
             <h2 className="form-title">Log in</h2>
             <form className="form-content" id="register-form">
