@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import "./Login.css";
 
-export default function Login() {
+export default function Login({handleLogin}) {
 
 
-  let history = useHistory()
+  let navigate = useNavigate()
+
+  const [msgs,setMsgs] = useState("")
   
   const [login,setLogin] = useState({})
 
@@ -43,7 +45,7 @@ export default function Login() {
           if(token.token!=="")
           {
               handleLogin(data)
-              history.push("/profile")
+              navigate("/landing")
           }
           else
           {
