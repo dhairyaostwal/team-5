@@ -1,10 +1,11 @@
 import ViewProfile from './components/ViewProfile';
 import Login from './Login';
+import Contacts from './components/Contacts';
 import Signup from './Signup';
 import Landing from './Landing';
 import LinkedInFileUpload from './components/LinkedInFileUpload';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RedeemPoints from './components/RedeemPoints'
+import RedeemPoints from './components/RedeemPoints';
 import AdminPage from './AdminPage';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/viewprofile" element={<ViewProfile />} />
           <Route path="/linkedinupload" element={<LinkedInFileUpload />} />
+          <Route path="/contacts" element={<Contacts />} />
           <Route path="/" element={<Signup />} />
         </Routes>
       </div>
