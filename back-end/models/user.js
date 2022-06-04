@@ -18,10 +18,6 @@ const userSchema = mongoose.Schema({
         type:String,
         required: true
     },
-    linkedInURL: {
-        type: String,
-        required: true
-    },
     referralCode: {
         type: String,
         required: true
@@ -37,7 +33,7 @@ const userSchema = mongoose.Schema({
     points: {
         type: Number,
         required: true,
-        default:10
+        default:100
     },
     date:{
         type:Date,

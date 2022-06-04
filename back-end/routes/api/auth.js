@@ -39,7 +39,6 @@ router.post('/',(req,res)=>{
                             name:user.name,
                             email:user.email,
                             mobileNo: user.mobileNo,
-                            linkedInURL: user.linkedInURL,
                             isAuth: user.isAuth,
                             referralCode: user.referralCode,
                             referralByCode : user.referralByCode,
