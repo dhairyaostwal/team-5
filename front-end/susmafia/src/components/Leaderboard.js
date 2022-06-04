@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { GiRank3, GiRank2, GiRank1 } from 'react-icons/gi';
 import './Leaderboard.css';
 
 const Leaderboard = () => {
+
+  const [leadingEntrepreneurs, setLeadingEntrepreneurs] = useState({})
+
+  useEffect(() => {
+    const url = 'http://localhost:8000/api/incentives/leaderboard'
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setLeadingEntrepreneurs(data))
+      .catch(err => console.log(err))
+  }, [leadingEntrepreneurs])
+
   return (
     <div className="m-5 text-center">
       <table className="table text-center border border-secondary">
@@ -15,6 +26,14 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
+          {leadingEntrepreneurs.map(leadingEntrepreneur => {
+            <tr class="">
+              <th scope="row">{/* <GiRank3 size={40} /> */}1</th>
+              <td>{ leadingEntrepreneur.name }</td>
+              <td>{ leadingEntrepreneur.points }</td>
+              <td>Technology</td>
+            </tr>
+          })}
           <tr class="">
             <th scope="row">{/* <GiRank3 size={40} /> */}1</th>
             <td>Ram</td>
