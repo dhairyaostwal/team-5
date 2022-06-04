@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+
+import {Link} from 'react-router-dom';
 import "./Login.css";
 
 export default function Login() {
@@ -60,7 +62,7 @@ export default function Login() {
               </div>
               <div className="form-group">
                 <p>
-                  Don't have an account?<a href="./Signup">Register</a>
+                  Don't have an account?<Link to="/signup">Register</Link>
                 </p>
               </div>
             </form>
