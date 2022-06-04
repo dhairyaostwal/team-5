@@ -4,7 +4,7 @@ import Signup from './Signup';
 import Landing from './Landing';
 import LinkedInFileUpload from './components/LinkedInFileUpload';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RedeemPoints from './RedeemPoints';
+import RedeemPoints from './components/RedeemPoints'
 import AdminPage from './AdminPage';
 
 function App() {

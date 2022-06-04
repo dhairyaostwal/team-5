@@ -22,7 +22,7 @@ def extractFromFile():
     if not os.path.isdir(target):
         os.mkdir(target)
     
-    file = request.files['file'] 
+    file = request.files['myFile'] 
     filename = secure_filename(file.filename)
     destination="/".join([target, filename])
     file.save(destination)
@@ -35,7 +35,8 @@ def extractFromFile():
 
 @app.route('/pdf-extract')
 def extract_pdf():
-    with open('Profile.pdf','rb') as f:
+    file = request.files['myFile'] 
+    with open(file,'rb') as f:
         extracted_text = slate.PDF(f)
     print(extracted_text)
     all_details_in_file = extracted_text[0]
