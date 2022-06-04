@@ -1,10 +1,14 @@
 .WebsiteStatistics--container {
   align-items: center;
-  background-color: #e4bc70;
+  background-color: #202020;
   width: 30rem;
   height: auto;
   padding: 1% 1%;
   color: #fff;
+}
+
+.WebsiteStatistics--container h2{
+  font-size: 1.5rem;
 }
 
 .fa-solid {
