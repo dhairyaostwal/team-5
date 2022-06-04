@@ -15,10 +15,21 @@ function AdminPage() {
     },[users])
 
 
-    const handleClick = (id) => {
+    const handleAdmit = (id) => {
         const url = `http://localhost:8000/api/admin/admit-user/${id}`
         fetch(url,{
             method:'POST'
+        })
+        .then(res=>res.json())
+        .then(data=>setUsers(data))  
+        .catch(err=>console.log(err))
+    }
+
+
+    const handleDelete = (id) => {
+        const url = `http://localhost:8000/api/admin/reject-user/${id}`
+        fetch(url,{
+            method:'DELETE'
         })
         .then(res=>res.json())
         .then(data=>setUsers(data))  
@@ -33,9 +44,9 @@ function AdminPage() {
             <div>
                 <p>{user.name}</p>
                 <p>{user.email}</p>
-                <button onClick={()=>handleClick(user._id)}>Admit</button>
+                <button onClick={()=>handleAdmit(user._id)}>Admit</button>
+                <button onClick={()=>handleDelete(user._id)}>Delete</button>
             </div>
-
         })}
 
     </div>

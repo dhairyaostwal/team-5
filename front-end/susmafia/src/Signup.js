@@ -1,11 +1,49 @@
-import { DomPlatform } from "chart.js";
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
 
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 
 const Signup = () => {
+
+  const [user,setUser] = useState({})
+
+    let history = useHistory()
+
+    const handleChange=(e)=>{
+        const {name,value} = e.target
+
+        setUser({
+            ...user,
+            [name]:value
+        })
+
+    }
+
+    const handleSubmit=(e)=>{
+
+        const url = 'http://127.0.0.1:8000/api/user/'
+
+        e.preventDefault()
+
+        fetch(url ,{
+                method:'POST',
+                headers:{
+                    'Content-type':'application/json',
+                },
+                body:JSON.stringify(student)
+            })
+            .then((response)=> {
+                console.log(response)
+                history.push("/login")
+                setStudent({})
+            })
+            .catch(function(error){
+            console.log('ERROR:',error)
+        })
+
+    }
+
 
   const inputs = [
     {
@@ -93,6 +131,7 @@ const Signup = () => {
                   id="signup"
                   className="form-submit"
                   value="Next"
+                  onClick={handleSubmit}
                 />
               </div>
               <div className="form-group">
