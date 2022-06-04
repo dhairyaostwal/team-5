@@ -1,7 +1,12 @@
 import React from 'react';
+import FinancialNews from './components/FinancialNews';
 
 const Landing = () => {
-  return <div></div>;
+  return (
+    <div>
+      <FinancialNews />
+    </div>
+  );
 };
 
 export default Landing;
