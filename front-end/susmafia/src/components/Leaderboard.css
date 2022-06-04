@@ -1,7 +1,20 @@
-tr:hover{
-    background-color: rgb(206, 255, 255);
-    color: red;
+/* tr:hover {
+  background-color: #202020;
+  color: red;
+} */
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
-table{
-    font-size: 25px;
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+td {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+table {
+  font-size: 25px;
 }

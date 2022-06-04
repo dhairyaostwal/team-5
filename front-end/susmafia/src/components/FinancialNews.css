@@ -1,9 +1,19 @@
 .FinancialNews--Container {
-  background-color: #e4bc70;
+  background-color: #202020;
   width: 35rem;
   height: auto;
   padding: 1% 3%;
-  color: #171717;
+  color: #fff;
+}
+
+.FinancialNews--Container h1 {
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.FinancialNews--Container h3 {
+  font-size: 1.2rem;
 }
 
 @media only screen and (max-width: 540px) {

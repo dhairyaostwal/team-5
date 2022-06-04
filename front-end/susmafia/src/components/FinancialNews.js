@@ -6,15 +6,16 @@ const FinancialNews = () => {
       <h1>Top Financial News</h1>
 
       <p>
-        <h3>Headline 1</h3>
+        <h3>Your retirement fund now has lowest interest rate since 1977-78</h3>
         <br />
-        <h3>Headline 2</h3>
+        <h3>Twitter says waiting period for Elon Musk's deal has expired.</h3>
         <br />
-        <h3>Headline 3</h3>
+        <h3>EU deal on single mobile charging port likely June 7 in setback for Apple.</h3>
         <br />
       </p>
     </div>
   );
 };
 
-export default FinancialNews;
+export default FinancialNews
+
