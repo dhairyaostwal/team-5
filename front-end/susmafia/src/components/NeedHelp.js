@@ -15,10 +15,25 @@ const NeedHelp = () => {
         </h3>
         <br />
         <h3>
-          <a href="">jack</a> is looking for employes in React feild
-          </h3>
+          <a href="">Jack</a> is looking for employes in React feild
+        </h3>
         <br />
       </p>
+      <center>
+        <button
+          style={{
+            backgroundColor: 'purple',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '5px',
+            fontSize: '1.2rem',
+            padding: '1% 3%',
+            fontWeight: '600',
+          }}
+        >
+          See More...
+        </button>
+      </center>
     </div>
   );
 };

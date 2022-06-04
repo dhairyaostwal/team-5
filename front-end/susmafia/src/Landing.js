@@ -13,16 +13,23 @@ const Landing = () => {
   return (
     <div>
       <NavbarComponent />
-      <div className="Landing--container1">
-        <FinancialNews />
-        <NeedHelp />
+      <div
+        style={{
+          backgroundColor: '#7ee8fa',
+          backgroundImage: 'linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%)',
+        }}
+      >
+        <div className="Landing--container1">
+          <FinancialNews />
+          <NeedHelp />
+        </div>
+        <div className="Landing--container2">
+          <WebsiteStatistics />
+          <Advertisement />
+          <Advertisement />
+        </div>
+        <Leaderboard />
       </div>
-      <div className="Landing--container2">
-        <WebsiteStatistics />
-        <Advertisement />
-        <Advertisement />
-      </div>
-      <Leaderboard />
     </div>
   );
 };
