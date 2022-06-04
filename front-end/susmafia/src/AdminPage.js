@@ -3,16 +3,18 @@ import React,{useState, useEffect} from 'react'
 function AdminPage() {
 
 
-    const [users,setUsers] = useState({})
+    const [users,setUsers] = useState([])
 
 
     useEffect(()=>{
         const url = 'http://localhost:8000/api/admin/'
         fetch(url)
         .then(res=>res.json())
-        .then(data=>setUsers(data))  
+        .then(data=>{
+            setUsers(data)
+        console.log(data)})  
         .catch(err=>console.log(err))
-    },[users])
+    },[])
 
 
     const handleAdmit = (id) => {
@@ -41,12 +43,14 @@ function AdminPage() {
     <div>
         <h1>Admin Page</h1>
         {users.map((user)=>{
+            return(
             <div>
                 <p>{user.name}</p>
                 <p>{user.email}</p>
                 <button onClick={()=>handleAdmit(user._id)}>Admit</button>
                 <button onClick={()=>handleDelete(user._id)}>Delete</button>
             </div>
+            )
         })}
 
     </div>

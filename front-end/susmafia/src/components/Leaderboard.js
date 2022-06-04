@@ -4,7 +4,7 @@ import './Leaderboard.css';
 
 const Leaderboard = () => {
 
-  const [leadingEntrepreneurs, setLeadingEntrepreneurs] = useState({})
+  const [leadingEntrepreneurs, setLeadingEntrepreneurs] = useState([])
 
   useEffect(() => {
     const url = 'http://localhost:8000/api/incentives/leaderboard'
