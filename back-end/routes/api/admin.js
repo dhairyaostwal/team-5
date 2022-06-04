@@ -8,7 +8,17 @@ const auth = require('../../middleware/auth')
 router.post('/admit-user:id',auth,async(req,res)=>{
     User.findByIdAndUpdate(
         req.params.id, {'isAuth':true}).then(result => {
-            res.json({ redirect: '/blogs' });
+            res.json({ redirect: '/' });
+          })
+          .catch(err => {
+            console.log(err);
+          });
+    
+})
+router.post('/reject-user:id',auth,async(req,res)=>{
+    User.findByIdAndDelete(
+        req.params.id).then(result => {
+            res.json({ redirect: '/' });
           })
           .catch(err => {
             console.log(err);
