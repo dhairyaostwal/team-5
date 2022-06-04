@@ -34,6 +34,11 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         required: true
     },
+    points: {
+        type: Number,
+        required: true,
+        default:100
+    },
     date:{
         type:Date,
         required:true,

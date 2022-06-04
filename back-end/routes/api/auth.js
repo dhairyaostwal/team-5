@@ -42,7 +42,8 @@ router.post('/',(req,res)=>{
                             linkedInURL: user.linkedInURL,
                             isAuth: user.isAuth,
                             referralCode: user.referralCode,
-                            referralByCode : user.referralByCode
+                            referralByCode : user.referralByCode,
+                            points: user.points
                         }
                     })
                 }
