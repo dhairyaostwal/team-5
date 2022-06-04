@@ -1,4 +1,5 @@
 import React from 'react';
+import Advertisement from './components/Advertisement';
 import FinancialNews from './components/FinancialNews';
 import NeedHelp from './components/NeedHelp';
 import WebsiteStatistics from './components/WebsiteStatistics';
@@ -11,7 +12,11 @@ const Landing = () => {
         <FinancialNews />
         <NeedHelp />
       </div>
-      <WebsiteStatistics />
+      <div className="Landing--container2">
+        <WebsiteStatistics />
+        <Advertisement />
+        <Advertisement />
+      </div>
     </div>
   );
 };

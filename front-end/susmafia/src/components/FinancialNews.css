@@ -5,3 +5,10 @@
   padding: 1% 3%;
   color: #171717;
 }
+
+@media only screen and (max-width: 540px) {
+  .FinancialNews--Container {
+    width: 100%;
+    max-width: 35rem;
+  }
+}

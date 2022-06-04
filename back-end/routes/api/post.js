@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const Post = require('../../models/post')
 
+const Comment = require('../../models/comment')
+
 const auth = require('../../middleware/auth')
 
 
@@ -23,40 +25,40 @@ router.post('/add-post',auth,async(req,res)=>{
 })
 
 
-// router.delete('/delete-post/:id',auth,getpost,async(req,res)=>{
-//     try{
-//         await res.post.remove()
-//         res.json({ message: 'Deleted User' })
-//     }catch(err){
-//         res.status(500).json( {message:err.message} )
-//     }
-// })
+router.get('/get-posts',async(req,res)=>{
+    try{
+        const posts = await Post.find()
+        res.json(posts)
+    }catch(err){
+        res.status(500).json({ message:err.message })
+    }
+})
 
-// router.get('/get-posts/:id',async(req,res)=>{
+router.get('/get-comments/:id',async(req,res)=>{
+    try{
+        const comments = await Comment.find({
+            post_id: req.params.id
+        })
+        res.json(comments)
+    }catch(err){
+        res.status(500).json({ message:err.message })
+    }
+})
 
-//     try{
-//         const posts = await post.find({
-//             user_id : req.params.id
-//           })
-//         res.json(posts)
-//     }catch(err){
-//         res.status(500).json({ message:err.message })
-//     }
-// })
-
-// async function getpost(req,res,next){
-//     let post
-//     try{
-//         post = await post.findById(req.params.id)
-//         if(post == null){
-//             return res.status(404).json('Cannot find User')
-//         }
-//     }catch(err){
-//         return res.status(500).json({ message:err.message })
-//     }
+router.post('/add-comment',auth,async(req,res)=>{
     
-//     res.post = post
-//     next()
-// }
+        const comment = new Comment({
+            user_id: req.user.id,
+            post_id: req.body.post_id,
+            comment: req.body.comment
+        })
+    
+        try{
+            const newcomment = await comment.save()
+            res.status(201).json(newcomment)
+        }catch(err){
+            res.status(400).json({ message:err.message })
+        }    
+})
 
 module.exports = router
