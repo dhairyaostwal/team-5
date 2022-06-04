@@ -9,11 +9,11 @@ const config = require('config')
 const jwt = require('jsonwebtoken')
 
 router.post('/',(req,res)=>{
-    const { name,email,password, mobileNo, linkedInURL, referralByCode } = req.body
+    const { name,email,password, mobileNo, referralByCode } = req.body
 
 
     //Validation
-    if(!name||!email||!password|| !mobileNo|| !linkedInURL)
+    if(!name||!email||!password|| !mobileNo)
         return res.status(400).json({ msg : 'Enter all required fields'})
     
     User.findOne({email})
@@ -26,7 +26,6 @@ router.post('/',(req,res)=>{
             email,
             password,
             mobileNo, 
-            linkedInURL,
             isAuth, 
             referralCode,
             referralByCode
@@ -58,7 +57,6 @@ router.post('/',(req,res)=>{
                                     email:user.email,
                                     mobileNo: user.mobileNo,
                                     isAuth: user.isAuth,
-                                    linkedInURL: user.linkedInURL,
                                     referralCode: user.referralCode,
                                     referralByCode: user.referralByCode,
                                     points: user.points

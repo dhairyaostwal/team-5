@@ -33,10 +33,12 @@ def extractFromFile():
 
 # flask_cors.CORS(app, expose_headers='Authorization')
 
-@app.route('/pdf-extract')
+@app.route('/pdf-extract', methods=['POST'])
 def extract_pdf():
-    file = request.files['myFile'] 
-    with open(file,'rb') as f:
+    print("Here")
+    file = request.files['file'] 
+    file.save('Profile.pdf')
+    with open('Profile.pdf','rb') as f:
         extracted_text = slate.PDF(f)
     print(extracted_text)
     all_details_in_file = extracted_text[0]
