@@ -36,7 +36,7 @@ Content-Type: application/json
 
 {
     "name":"Johnaton",
-    "email":"johnaton@gmail.com",
+    "email":"hackathon@gmail.com",
     "password":"1321",
     "mobileNo": "349221093", 
     "linkedInURL": "http://jn.com/",
@@ -157,3 +157,13 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGJmNDMwYjI3YWJjN
 ###
 
 GET http://localhost:8000/api/incentives/leaderboard
+
+
+###
+POST http://localhost:8000/api/incentives/add-points
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWI2YmYxNWVmMTc0ODE1MTFlZWE4YyIsImlhdCI6MTY1NDM1Mjg4MiwiZXhwIjoxNjU0MzU2NDgyfQ.2wRGKyWO29gLyvFfSg2aNw6nEayAFf7QNCf5LXuUM8Y
+
+{
+    "additionalPoints": 20
+}
