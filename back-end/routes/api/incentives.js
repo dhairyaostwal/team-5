@@ -24,5 +24,19 @@ router.get('/leaderboard', (req, res) => {
 })
 
 
+router.post('/add-points',auth, async(req, res) => {
+    const additionalPoints = req.body.additionalPoints;
+    try{
+        const user = await User.findById(req.user.id)
+        user.points = user.points + additionalPoints
+        await user.save()
+        res.json(user)
+    }catch(err){
+        res.status(500).json({ message:err.message })
+    }
+
+})
+
+
 
 module.exports = router
