@@ -1,4 +1,5 @@
 import React from 'react';
+import ResourceChart from '../ResourceChart';
 import './WebsiteStatistics.css';
 
 const WebsiteStatistics = () => {
@@ -12,9 +13,9 @@ const WebsiteStatistics = () => {
         </h2>
       </div>
 
-      <div style={{ backgroundColor: '#000', padding: '1% 3%' }}>
+      <div style={{ backgroundColor: '#f1f1f1', padding: '2% 1%' }}>
         {/* Chalsie Task */}
-
+        <ResourceChart />
         {/* Add Chart.js line chart showing resources shared */}
       </div>
     </div>

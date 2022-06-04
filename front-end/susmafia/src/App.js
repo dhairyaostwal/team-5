@@ -2,7 +2,6 @@ import './App.css';
 import Landing from './Landing';
 import { Navbar,Container,Nav, NavLink } from 'react-bootstrap';
 import {Routes,Route} from 'react-router-dom';
-import Viewprofile from './components/Viewprofile';
 
 function App() {
   return (

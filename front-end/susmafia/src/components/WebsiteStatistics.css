@@ -1,4 +1,5 @@
 .WebsiteStatistics--container {
+  align-items: center;
   background-color: #212121;
   width: 30rem;
   height: auto;
