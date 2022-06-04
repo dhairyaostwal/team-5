@@ -35,11 +35,11 @@ POST http://localhost:8000/api/user
 Content-Type: application/json
 
 {
-    "name":"John",
-    "email":"john@gmail.com",
-    "password":"12345",
-    "mobileNo": "3492121093", 
-    "linkedInURL": "http://abc.com/",
+    "name":"Johnaton",
+    "email":"johnaton@gmail.com",
+    "password":"1321",
+    "mobileNo": "349221093", 
+    "linkedInURL": "http://jn.com/",
     "referralByCode": "abc123"
 }
 
@@ -153,3 +153,7 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGJmNDMwYjI3YWJjN
     "description": "some_desc",
     "job_title": "SDE"
 }
+
+###
+
+GET http://localhost:8000/api/incentives/leaderboard
