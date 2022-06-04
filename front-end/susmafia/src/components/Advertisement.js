@@ -8,10 +8,11 @@ const Advertisement = () => {
           width: '350px',
           height: 'auto',
         }}
-        src="https://i.pinimg.com/originals/17/d8/2d/17d82d57f40194f5b4f8aaceb7c25df7.png"
+        src="https://i.pinimg.com/736x/42/3d/f9/423df9c9294b97a73d8f912cb88967bb--mini-car-advertising-poster.jpg"
       />
     </div>
   );
 };
 
 export default Advertisement;
+
