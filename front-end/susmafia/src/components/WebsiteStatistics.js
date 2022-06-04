@@ -5,7 +5,7 @@ import './WebsiteStatistics.css';
 const WebsiteStatistics = () => {
   return (
     <div className="WebsiteStatistics--container">
-      <div style={{ backgroundColor: '#000', padding: '1% 3%' }}>
+      <div style={{ backgroundColor: 'grey', padding: '1% 3%' }}>
         <h2>Total Users: 576 </h2>
         <h2>
           Change in User Growth: <span style={{ color: '#00ff00' }}>50% </span>
