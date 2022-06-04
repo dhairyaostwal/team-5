@@ -1,0 +1,14 @@
+.NeedsHelp--Container {
+  background-color: grey;
+  width: 35rem;
+  height: auto;
+  padding: 1% 3%;
+  color: #171717;
+}
+
+@media only screen and (max-width: 540px) {
+  .NeedsHelp--Container {
+    width: 100%;
+    max-width: 35rem;
+  }
+}
