@@ -153,3 +153,7 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGJmNDMwYjI3YWJjN
     "description": "some_desc",
     "job_title": "SDE"
 }
+
+###
+
+GET http://localhost:8000/api/incentives/leaderboard

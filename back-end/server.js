@@ -22,4 +22,6 @@ app.use('/api/user',require('./routes/api/user'))
 
 app.use('/api/post',require('./routes/api/post'))
 
+app.use('/api/incentives', require('./routes/api/incentives'))
+
 app.listen(8000,()=>console.log('Server Started'))
