@@ -1,0 +1,152 @@
+GET http://localhost:4000/users
+x-auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNzZlZTYxZWMxMGY1MDdhMTdlOTk3NCIsImlhdCI6MTYzNjI3NTkzOSwiZXhwIjoxNjM2Mjc5NTM5fQ.j4sVSEDz5KxXcCgQD5XkEdoaAtkbk0Yfvm0guJQUf2I
+
+###
+
+GET http://localhost:4000/users/6170f4152eead8878416e2cb
+
+
+###
+
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+    "name":"John",
+    "email":"something@g.com"
+}
+
+
+###
+
+DELETE http://localhost:4000/users/61717be7a508321e10344503
+
+###
+PATCH http://localhost:4000/users/6170f4152eead8878416e2cb
+Content-Type: application/json
+
+{
+    "name":"Ron"
+}
+
+###
+
+POST http://localhost:4000/api/user
+Content-Type: application/json
+
+{
+    "name":"John",
+    "email":"john@gmail.com",
+    "password":"12345"
+}
+
+###
+
+POST http://localhost:4000/api/auth
+Content-Type: application/json
+
+{
+    "email":"john@gmail.com",
+    "password":"12345"
+}
+
+
+###
+GET http://localhost:4000/api/auth/user
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNzZlZTYxZWMxMGY1MDdhMTdlOTk3NCIsImlhdCI6MTYzNjI3NTU2OCwiZXhwIjoxNjM2Mjc5MTY4fQ.5ai4LNuHKSVnMeF1YwokBjyqxjl_JqxJ7tN1pZ7AtwU
+
+
+
+###
+POST http://localhost:4000/api/project/add-project
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNzZlZTYxZWMxMGY1MDdhMTdlOTk3NCIsImlhdCI6MTYzNjI3NTU2OCwiZXhwIjoxNjM2Mjc5MTY4fQ.5ai4LNuHKSVnMeF1YwokBjyqxjl_JqxJ7tN1pZ7AtwU
+
+{
+    "id":"6176ee61ec10f507a17e9974",
+    "title":"new title2",
+    "date_start":"2021-10-25T17:50:25.400Z",
+    "date_end":"2021-10-25T17:50:25.400Z",
+    "description":"some description2",
+    "link":"link@github.com"
+}
+
+
+###
+GET http://localhost:4000/api/project/get-projects
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNzZlZTYxZWMxMGY1MDdhMTdlOTk3NCIsImlhdCI6MTYzNjI3NTU2OCwiZXhwIjoxNjM2Mjc5MTY4fQ.5ai4LNuHKSVnMeF1YwokBjyqxjl_JqxJ7tN1pZ7AtwU
+
+
+
+###
+POST http://localhost:8000/api/user
+Content-Type: application/json
+
+{
+    "name":"John",
+    "email":"something@gmail.com",
+    "password":"12345"
+}
+
+
+###
+POST http://localhost:8000/api/auth
+Content-Type: application/json
+
+{
+    "email":"john@gmail.com",
+    "password":"12345"
+}
+
+
+###
+POST http://localhost:4000/api/project/add-project
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODhiNmFjM2YzMDljNzBiZGNjMGFlMSIsImlhdCI6MTYzNjM3MjE0MCwiZXhwIjoxNjM2Mzc1NzQwfQ.Zu9W5UdO3bxRuxbhfpRGzHY5KXmV21KTlnvOoJxMQI0
+
+{
+    "title":"some",
+    "date_start":"Mon, 08 Nov 2021 11:49:50 GMT",
+    "date_end":"Mon, 08 Nov 2021 11:49:50 GMT",
+    "description":"some",
+    "link":"some"
+}
+
+
+###
+GET http://localhost:4000/api/project/get-projects/6188b6ac3f309c70bdcc0ae1
+
+
+###
+GET http://localhost:8000/api/tag/get-tags
+
+
+
+###
+POST http://localhost:8000/api/project/add-project
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGJmNDMwYjI3YWJjNjhhNjc2MTNkOCIsImlhdCI6MTYzNjU2MjUzMiwiZXhwIjoxNjM2NTY2MTMyfQ.bRDK73KaBDp6qFys95fuPCm7GUApG1gFTaIzJtYQOu4
+
+{
+    "date_end": "2021-11-05",
+    "date_start": "2021-11-05",
+    "description": "some_desc",
+    "link": "some_link@github",
+    "tag": "Web Dev",
+    "title": "React"
+}
+
+
+
+###
+POST http://localhost:8000/api/internship/add-internship
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGJmNDMwYjI3YWJjNjhhNjc2MTNkOCIsImlhdCI6MTYzNjU2MjUzMiwiZXhwIjoxNjM2NTY2MTMyfQ.bRDK73KaBDp6qFys95fuPCm7GUApG1gFTaIzJtYQOu4
+
+{
+    "company_name": "some_startup",
+    "date_end": "2021-11-20",
+    "date_start": "2021-11-12",
+    "description": "some_desc",
+    "job_title": "SDE"
+}

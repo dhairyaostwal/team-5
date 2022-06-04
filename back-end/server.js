@@ -1,69 +1,27 @@
-//Importing the express 
-const exp= require('express')
-const app= exp();
 require('dotenv').config()
 
-const path= require('path')
-app.use(exp.static(path.join(__dirname,'./build')));
+const express = require('express')
+const app = express()
 
+const cors = require('cors')
+app.use(cors())
 
+const mongoose = require('mongoose')
+mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser : true })
 
-//Connecting the api with mongodb
-const dbUrl=process.env.DATABASE_CONNECTION_URL
+const db = mongoose.connection
+db.on('error',(error)=>console.error(error))
+db.once('open',()=>console.log('Connected to Database'))
 
-//importing the mongodb
-const mclient=require('mongodb').MongoClient;
+// for json
+app.use(express.json())
 
+app.use('/api/auth',require('./routes/api/auth'))
 
+app.use('/api/user',require('./routes/api/user'))
 
-mclient.connect(dbUrl)
-.then((client)=>{
-    //creating a databse object
-    const dbObj= client.db("mongo_demo");
-     
-    //creating the product collection object
-    const productCollectionObj=dbObj.collection("productCollectionObj")
-    const userCollectionObj = dbObj.collection('userCollectionObj')
+app.use('/api/project',require('./routes/api/project'))
+app.use('/api/internship',require('./routes/api/internship'))
+app.use('/api/tag',require('./routes/api/tag'))
 
-    //sharing the product collection object
-    app.set("productCollectionObj",productCollectionObj);
-    app.set('userCollectionObj',userCollectionObj);
-
-})
-.catch(err=>console.log("Connection error",err));
-
-
-
-
-
-
-
-//Importing the product and userapp
-const userApp=require('./apis/userApi')  
-
-//Routing the user and product api
-app.use('/user',userApp);
-
-//Handling the refresh 
-app.use('*',(req,res,next)=>{
-    //Sending the html file
-    res.sendFile(path.join(__dirname,'./build/index.html'));
-})
-
-//Invalid path handling
-app.use((req,res,next)=>{
-    res.send({message:'invalid url path'})
-})
-
-
-//error handling
-app.use((err,req,res,next)=>{
-    res.send(`Error occured ${err}`)
-})
-
-
-const port= process.env.PORT;
-
-app.listen(port,()=>{
-    console.log(`Listening at port:${port}`);
-})
+app.listen(8000,()=>console.log('Server Started'))
