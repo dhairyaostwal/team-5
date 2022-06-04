@@ -1,32 +1,28 @@
-import './App.css';
-import Landing from './Landing';
-import NavbarComponent from './components/Navbar';
 import ViewProfile from './components/ViewProfile';
 import Login from './Login';
 import Signup from './Signup';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import RedeemPoints from './components/RedeemPoints';
-
+import Landing from './Landing';
+import LinkedInFileUpload from './components/LinkedInFileUpload';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RedeemPoints from './RedeemPoints';
+import AdminPage from './AdminPage';
 
 function App() {
   return (
-    <RedeemPoints/>
-  //   <Router>   
-  //     <div className="App">
-  //     <Routes>
-  //       <Route path="/signup" element={<Signup/>}/>
-  //       <Route path="/login" element={<Login/>}/>
-  //       <Route path="/landing" element={<Landing/> }/>
-               
-        
-        
-
-
-
-  //       <Route path="/" element={<Signup/>}/>
-  //     </Routes>
-  //   </div>
-  // </Router>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/redeempoints" element={<RedeemPoints />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/viewprofile" element={<ViewProfile />} />
+          <Route path="/linkedinupload" element={<LinkedInFileUpload />} />
+          <Route path="/" element={<Signup />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -35,21 +35,6 @@ router.post('/admit-user/:id', async(req,res)=>{
           });
     
 })
-router.post('/add-points-to-user-with-the-referalcode', async(req,res)=>{
-    const {referalCode,points} = req.body
-    console.log(referalCode,points)
-    User.findOne({referalCode:referalCode}).then(result => {
-        if(result){
-            User.findByIdAndUpdate(
-                result._id, {'points':result.points+points}).then(result => {
-                    console.log("Updated");
-                  })
-                  .catch(err => {
-                    console.log(err);
-                  });
-        }
-    })
-})
 
 router.delete('/reject-user/:id',async(req,res)=>{
     User.findByIdAndDelete(

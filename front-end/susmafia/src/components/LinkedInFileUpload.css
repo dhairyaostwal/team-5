@@ -1,0 +1,10 @@
+.LinkedIn--Upload--Container {
+  display: flex;
+  padding-top: 10rem;
+  justify-content: center;
+}
+
+.LinkedIn--Upload {
+  background-color: palevioletred;
+  padding: 1% 3%;
+}
