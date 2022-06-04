@@ -11,11 +11,16 @@ const auth = require('../../middleware/auth')
 
 
 router.get('/leaderboard', (req, res) => {
-    const limit = 5;
-    const leaderBoardData = User.find({}).sort({
+    User.find().sort({
         points: -1
-    });
-    console.log(leaderBoardData);
+    }).limit(5).then(user => {
+        res.json(user)
+    }).catch(err => {
+        res.status(500).json({
+            message: err.message
+        })
+    })
+
 })
 
 

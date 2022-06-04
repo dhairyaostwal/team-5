@@ -35,11 +35,11 @@ POST http://localhost:8000/api/user
 Content-Type: application/json
 
 {
-    "name":"John",
-    "email":"john@gmail.com",
-    "password":"12345",
-    "mobileNo": "3492121093", 
-    "linkedInURL": "http://abc.com/",
+    "name":"Johnaton",
+    "email":"johnaton@gmail.com",
+    "password":"1321",
+    "mobileNo": "349221093", 
+    "linkedInURL": "http://jn.com/",
     "referralByCode": "abc123"
 }
 
