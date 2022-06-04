@@ -14,17 +14,25 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    description:{
+    mobileNo: {
         type:String,
-        required:true
+        required: true
     },
-    stud_id:{
-        type:String,
-        required:true
+    linkedInURL: {
+        type: String,
+        required: true
     },
-    cgpa:{
-        type:String,
-        required:true
+    referralCode: {
+        type: String,
+        required: true
+    },
+    referralByCode: {
+        type: String,
+        required: false
+    },
+    isAuth: {
+        type: Boolean,
+        required: true
     },
     date:{
         type:Date,

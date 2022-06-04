@@ -9,25 +9,30 @@ const config = require('config')
 const jwt = require('jsonwebtoken')
 
 router.post('/',(req,res)=>{
-    const { name,email,password,stud_id,cgpa,description } = req.body
+    const { name,email,password, mobileNo, linkedInURL, referralByCode } = req.body
 
 
     //Validation
-    if(!name||!email||!password||!stud_id||!cgpa||!description)
-        return res.status(400).json({ msg : 'Enter all fields'})
+    if(!name||!email||!password|| !mobileNo|| !linkedInURL)
+        return res.status(400).json({ msg : 'Enter all required fields'})
     
     User.findOne({email})
     .then(user =>{
         if(user) return res.status(400).json({ msg: 'User Exists' })
-
+        const referralCode = Math.random().toString(36).substring(2, 8);
+        const isAuth = false;
         const newUser = new User({
             name,
             email,
             password,
-            description,
-            stud_id,
-            cgpa
+            mobileNo, 
+            linkedInURL,
+            isAuth, 
+            referralCode,
+            referralByCode
         })
+
+        
 
         // Create Salt and Hash
         bcrypt.genSalt(10,(err,salt)=>{
@@ -51,9 +56,11 @@ router.post('/',(req,res)=>{
                                     id:user.id,
                                     name:user.name,
                                     email:user.email,
-                                    stud_id:user.stud_id,
-                                    cgpa:user.cgpa,
-                                    description:user.description
+                                    mobileNo: user.mobileNo,
+                                    isAuth: user.isAuth,
+                                    linkedInURL: user.linkedInURL,
+                                    referralCode: user.referralCode,
+                                    referralByCode: user.referralByCode
                                 }
                             })
                         }

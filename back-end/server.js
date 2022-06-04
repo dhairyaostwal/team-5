@@ -20,8 +20,6 @@ app.use('/api/auth',require('./routes/api/auth'))
 
 app.use('/api/user',require('./routes/api/user'))
 
-app.use('/api/project',require('./routes/api/project'))
-app.use('/api/internship',require('./routes/api/internship'))
-app.use('/api/tag',require('./routes/api/tag'))
+app.use('/api/post',require('./routes/api/post'))
 
 app.listen(8000,()=>console.log('Server Started'))

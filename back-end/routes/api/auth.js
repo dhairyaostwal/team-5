@@ -25,7 +25,6 @@ router.post('/',(req,res)=>{
         bcrypt.compare(password, user.password)
         .then(isMatch=>{
             if(!isMatch) return res.status(400).json({msg:'Invalid Credentials'})
-
             jwt.sign(
                 { id:user.id },
                 config.get('jwtSecret'),
@@ -39,9 +38,11 @@ router.post('/',(req,res)=>{
                             id:user.id,
                             name:user.name,
                             email:user.email,
-                            stud_id:user.stud_id,
-                            cgpa:user.cgpa,
-                            description:user.description
+                            mobileNo: user.mobileNo,
+                            linkedInURL: user.linkedInURL,
+                            isAuth: user.isAuth,
+                            referralCode: user.referralCode,
+                            referralByCode : user.referralByCode
                         }
                     })
                 }
