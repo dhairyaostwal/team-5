@@ -16,23 +16,35 @@ class LinkedInFileUpload extends Component {
 
   // On file upload (click the upload button)
   onFileUpload = () => {
+    const data = new FormData();
+    data.append('file', this.state.selectedFile);
+    data.append('filename', this.state.selectedFile.name);
+
+    fetch('http://127.0.0.1:5000/pdf-extract', {
+      method: 'POST',
+      body: data,
+    }).then((response) => {
+      response.json().then((body) => {
+        this.setState({ imageURL: `http://localhost:8000/${body.file}` });
+      });
+    });
     // Create an object of formData
-    const formData = new FormData();
+    // const formData = new FormData();
 
-    // Update the formData object
+    // // Update the formData object
 
-    formData.LinkedInFileUploadend(
-      'myFile',
-      this.state.selectedFile,
-      this.state.selectedFile.name
-    );
+    // formData.LinkedInFileUploadend(
+    //   'myFile',
+    //   this.state.selectedFile,
+    //   this.state.selectedFile.name
+    // );
 
-    // Details of the uploaded file
-    console.log(this.state.selectedFile);
+    // // Details of the uploaded file
+    // console.log(this.state.selectedFile);
 
-    // Request made to the backend api
-    // Send formData object
-    axios.post('http://127.0.0.1:5000/pdf-extract', formData);
+    // // Request made to the backend api
+    // // Send formData object
+    // axios.post('http://127.0.0.1:5000/pdf-extract', formData);
   };
 
   // File content to be displayed after
