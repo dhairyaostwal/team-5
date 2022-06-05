@@ -1,12 +1,16 @@
 import React from 'react';
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BiMessageAlt } from 'react-icons/bi';
 import { FaClipboardCheck } from 'react-icons/fa';
 import { FaAddressCard } from 'react-icons/fa';
+import NavbarComponent from './NavbarComponent';
 import './ViewProfile.css';
 
 function ViewProfile() {
   return (
+      <>
+      <NavbarComponent/>
     <div className="container view_profile_container  m-5">
       <div className="row mt-3">
         <div className="mt-3 col-sm-12 col-md-4 text-center">
@@ -90,6 +94,7 @@ function ViewProfile() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
