@@ -4,12 +4,15 @@ import { Navbar, Container, Nav, NavLink } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 const NavbarComponent = () => {
-  
+  let navigate= useNavigate();
+  const navigateToHome=()=>{
+    navigate('/landing');
+  }
   return (
     <div>
       <Navbar style={{ backgroundColor: 'green', color: '#fff' }}>
         <Container>
-          <Navbar.Brand to="">Team -5</Navbar.Brand>
+          <Navbar.Brand onClick={navigateToHome}>Team- 5</Navbar.Brand>
           <Nav className="mx -auto">
             <Link
               style={{ fontWeight: 600, color: '#fff' }}
