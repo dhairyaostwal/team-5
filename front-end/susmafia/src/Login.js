@@ -80,7 +80,6 @@ export default function Login({handleLogin}) {
                   required
                   autoCapitalize="off"
                   onChange={handleChange}
-                
                   placeholder="Enter Email"
                 />
               </div>
@@ -94,13 +93,10 @@ export default function Login({handleLogin}) {
                   id="pass"
                   autoCapitalize="off"
                   onChange={handleChange}
-                  
                   placeholder="Enter Password"
                   required
                 />
               </div>
-              
-
               <div className="form-group form-button">
                 <input
                   type="submit"

@@ -26,6 +26,8 @@ const Signup = () => {
 
         e.preventDefault()
 
+        console.log(user)
+
         fetch(url ,{
                 method:'POST',
                 headers:{
@@ -52,7 +54,7 @@ const Signup = () => {
       name: "name",
       type: "text",
       placeholder: "Username",
-      onChange : {handleChange},
+      onChange : handleChange,
     },
     {
       id: "user_email",
@@ -60,7 +62,7 @@ const Signup = () => {
       name: "email",
       type: "email",
       placeholder: "Your Email",
-      onChange : {handleChange},
+      onChange : handleChange,
     },
     {
       id: "user_contact",
@@ -68,7 +70,7 @@ const Signup = () => {
       name: "mobileNo",
       type: "tel",
       placeholder: "Your Contact Number",
-      onChange : {handleChange},
+      onChange : handleChange,
       
     },
     {
@@ -77,7 +79,7 @@ const Signup = () => {
       name: "password",
       type: "password",
       placeholder: "New Password",
-      onChange : {handleChange},
+      onChange : handleChange,
       
     },
     {
@@ -86,7 +88,7 @@ const Signup = () => {
       name: "referralByCode",
       type: "text",
       placeholder: "Referral Code",
-      onChange : {handleChange},
+      onChange : handleChange,
     },
   ];
 
