@@ -24,7 +24,7 @@ SusMafia is a community-driven non-profit organization and predominately tends t
 
 # Architecture Diagram
 
-
+![d80ec7d8-b243-4506-acd3-df9fdcaa8a80](https://user-images.githubusercontent.com/50984984/172034690-50fd96a4-5688-4cc8-aba2-79afe00488e4.jpg)
 
 # Tools & Technologies
 
