@@ -1,22 +1,27 @@
-.field_name{
-    color: rgb(77, 195, 255);
+.field_name {
+  color: rgb(77, 195, 255);
 }
 
-.profile_contacts{
-    color: rgb(77, 195, 255);
-    font-weight: bold;
-    background-color:rgb(192, 234, 255);
-
+.profile_contacts {
+  color: rgb(77, 195, 255);
+  font-weight: bold;
+  background-color: rgb(192, 234, 255);
 }
 
-.view_profile_container{
-    border: 2px solid rgb(77, 195, 255);
+.view_profile_container {
+  border: 2px solid rgb(77, 195, 255);
 }
 
-.col-8{
-    color: rgb(66, 227, 255);
-    margin-top: 10px;
+.col-8 {
+  color: rgb(66, 227, 255);
+  margin-top: 10px;
 }
-.col-4{
-    margin-top: 10px;
+.col-4 {
+  margin-top: 10px;
+}
+
+.muted {
+  margin-left: 1rem;
+  font-style: italic;
+  font-weight: 500;
 }
