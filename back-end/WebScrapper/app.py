@@ -83,13 +83,13 @@ def extract_pdf():
         all_details_with_separater[top_skills_index+3]
     ]
 
-    response_with_email = {email: response_data}
-    print(response_with_email)
+    # response_with_email = {email: response_data}
+    # print(response_with_email)
     # db.linkedInData.insert_one(response_with_email)
     # write_file(response_with_email, '..linkedinData.json')
     with open("linkedinData.json", "r+") as file:
         data = json.load(file)
-        data.update(response_with_email)
+        data.append(response_data)
         file.seek(0)
         json.dump(data, file)
     print("here")
