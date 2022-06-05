@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react'
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BiMessageAlt } from 'react-icons/bi';
@@ -11,7 +11,21 @@ import './ViewProfile.css';
 
 function ViewProfile({user}) {
 
+  const [userData,setUserData] = useState([])
 
+  const callAPI = ()=>{
+      const url = 'http://localhost:8000/api/user/get-linkedin-data/'+user.id
+      fetch(url)
+      .then(res=>res.json())
+      .then(data=>{
+        setUserData(data)
+      console.log(data)})  
+      .catch(err=>console.log(err))
+  }
+
+  useEffect(()=>{
+      callAPI()
+  },[])
 
   return (
     <div style={{ background: '#C7D36F' }}>
@@ -56,7 +70,14 @@ function ViewProfile({user}) {
             <br />
 
             <h4>
-              <b>Skills:</b> App Building, Teamwork, Entrepreneurship
+              <b>Skills:</b>
+              {
+                    userData.TopSkills?.map((skill)=>{
+                      return(
+                        <p>{skill} </p>
+                      )
+                      
+                    })}
             </h4>
             <br />
 

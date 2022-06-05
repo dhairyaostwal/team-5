@@ -95,7 +95,7 @@ function filterByEmail(item, target) {
   
 
 
-router.get('/get-linkedin-data/:id', async(req, res) => {
+  router.get('/get-linkedin-data/:id', async(req, res) => {
     try{
         const user= await User.findById(req.params.id)
         if(user == null){
@@ -111,7 +111,7 @@ router.get('/get-linkedin-data/:id', async(req, res) => {
             }
             // console.log(x);
         });
-        res.json('Cannot find data')
+         //res.json('Cannot find data')
         // let userData = data.filter(filterByEmail(email))
         
     }catch(err){
