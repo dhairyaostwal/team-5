@@ -36,7 +36,7 @@ Content-Type: application/json
 
 {
     "name":"Johnaton",
-    "email":"hackathon@gmail.com",
+    "email":"shrutiusolani@gmail.com",
     "password":"1321",
     "mobileNo": "349221093", 
     "linkedInURL": "http://jn.com/",
@@ -170,3 +170,6 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWI2YmYxNWVmMTc0O
 
 ###
 GET http://127.0.0.1:5000/pdf-extract
+
+###
+GET http://localhost:8000/api/user/get-linkedin-data/629c15543f4e35eda3c8b4f7
