@@ -11,7 +11,81 @@ const NavbarComponent = () => {
   };
   return (
     <div>
-      <Navbar style={{ backgroundColor: 'green', color: '#fff' }}>
+
+
+<Navbar bg="primary" expand="lg">
+  <Container>
+  <Navbar.Brand
+            style={{ cursor: 'pointer', fontWeight: '600', color: '#fff' }}
+            onClick={navigateToHome}
+          >
+           <img src={image} width={40} height={40} alt="Logo" /> SusMafia
+          </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mx-auto">
+      <Link
+              style={{ fontWeight: 600, color: '#fff' }}
+              className="nav-link"
+              to="/redeempoints"
+            >
+
+              Redeem Points
+            </Link>
+            <Link
+              style={{ fontWeight: 600, color: '#fff' }}
+              className="nav-link"
+              to="/viewprofile"
+            >
+              View Profile
+            </Link>
+            <Link
+              style={{ fontWeight: 600, color: '#fff' }}
+              className="nav-link"
+              to="/login"
+            >
+              Logout
+            </Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <Navbar style={{ backgroundColor: 'green', color: '#fff' }}>
         <Container>
           <Navbar.Brand
             style={{ cursor: 'pointer', fontWeight: '600', color: '#fff' }}
@@ -44,8 +118,8 @@ const NavbarComponent = () => {
             </Link>
           </Nav>
         </Container>
-      </Navbar>
-    </div>
+      </Navbar>*/}
+    </div> 
   );
 };
 
