@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import {Link, useNavigate} from 'react-router-dom';
 import "./Login.css";
 
-export default function Login() {
+export default function Login({handleLogin}) {
 
 
-  let history = useNavigate()
+  let navigate = useNavigate()
+
+  const [msgs,setMsgs] = useState("")
   
   const [login,setLogin] = useState({})
 
@@ -26,6 +28,8 @@ export default function Login() {
 
       e.preventDefault()
 
+      console.log(login)
+
       const url = 'http://127.0.0.1:8000/api/auth/'
       fetch(url,{
           method:'POST',
@@ -43,7 +47,7 @@ export default function Login() {
           if(token.token!=="")
           {
               handleLogin(data)
-              history.push("/profile")
+              navigate("/landing")
           }
           else
           {
@@ -63,10 +67,7 @@ export default function Login() {
   return (
     <>
       <section className="login">
-       
-
         <div className="login-content">
-          
           <div className="login-form">
             <h2 className="form-title">Log in</h2>
             <form className="form-content" id="register-form">

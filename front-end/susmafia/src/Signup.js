@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
 
-import { Link, useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 
 const Signup = () => {
 
   const [user,setUser] = useState({})
 
-    let history = useNavigate()
+    let navigate = useNavigate()
 
     const handleChange=(e)=>{
         const {name,value} = e.target
@@ -35,7 +35,7 @@ const Signup = () => {
             })
             .then((response)=> {
                 console.log(response)
-                history.push("/login")
+                navigate("/login")
                 setUser({})
             })
             .catch(function(error){
@@ -52,6 +52,7 @@ const Signup = () => {
       name: "name",
       type: "text",
       placeholder: "Username",
+      onChange : {handleChange},
     },
     {
       id: "user_email",
@@ -59,14 +60,15 @@ const Signup = () => {
       name: "email",
       type: "email",
       placeholder: "Your Email",
+      onChange : {handleChange},
     },
     {
       id: "user_contact",
       icon: "fa-solid fa-phone",
-      name: "contact_no",
+      name: "mobileNo",
       type: "tel",
       placeholder: "Your Contact Number",
-      
+      onChange : {handleChange},
       
     },
     {
@@ -75,7 +77,7 @@ const Signup = () => {
       name: "password",
       type: "password",
       placeholder: "New Password",
-      
+      onChange : {handleChange},
       
     },
     {
@@ -84,17 +86,9 @@ const Signup = () => {
       name: "referralByCode",
       type: "text",
       placeholder: "Referral Code",
+      onChange : {handleChange},
     },
   ];
-  
-
-  
-
-
-
-
-
- 
 
   return (
     <>

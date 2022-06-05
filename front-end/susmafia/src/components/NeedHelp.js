@@ -1,24 +1,45 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react'
 import './NeedsHelp.css';
+
 const NeedHelp = () => {
+
+  const [posts,setPosts] = useState([])
+
+
+    useEffect(()=>{
+        const url = 'http://localhost:8000/api/post/get-3-posts'
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>{
+          setPosts(data)
+          console.log(data)
+        })  
+        .catch(err=>console.log(err))
+    },[])
+
+
   return (
     <div className="NeedsHelp--Container">
       <h1>Helpdesk</h1>
-
+      {posts.map((post)=>{
+        return(
       <p>
+        
         <h3>
-          <a href="">Rahul</a> requires help from an Energy Investor
+          <a href="">Rahul</a> {post.title}
         </h3>
         <br />
-        <h3>
+        {/* <h3>
           <a href="">Arjun</a> needs help in the ML field
         </h3>
         <br />
         <h3>
           <a href="">Jack</a> is looking for employes in React feild
         </h3>
-        <br />
+        <br /> */}
       </p>
+        )
+      })}
       <center>
         <button
           style={{
