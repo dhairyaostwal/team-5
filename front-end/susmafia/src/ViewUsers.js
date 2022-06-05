@@ -20,7 +20,23 @@ function ViewUsers() {
       callAPI()
   },[])
   return (
-    <div>ViewUsers</div>
+    <div>
+      {
+        users.map((user)=>{
+          <ul class="guiz-awards-row guiz-awards-row-even">
+              <li class="guiz-awards-star"><span class="star goldstar"></span></li>
+              <li class="guiz-awards-title">{user.name}
+                  <div class="guiz-awards-subtitle">{user.email}</div>
+              </li>
+
+              <li class="guiz-awards-track"><button class="button-33" role="button">Add</button></li>
+              <li class="guiz-awards-time"><button class="button-45" role="button">Remove</button></li>
+          </ul>
+      })
+      }
+      ViewUsers
+    </div>
+    
   )
 }
 
