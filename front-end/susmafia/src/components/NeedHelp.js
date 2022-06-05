@@ -44,7 +44,7 @@ const NeedHelp = () => {
         )
       })}
       <center>
-        <Link
+        <Link to="/viewposts"
           style={{
             backgroundColor: 'purple',
             color: '#fff',
