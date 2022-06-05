@@ -64,7 +64,7 @@ function App() {
           <Route path="/landing" element={<Landing />} />
           <Route path="/redeempoints" element={<RedeemPoints />} />
           <Route path="/admin" element={<AdminPage />} />
-          <Route path="/viewprofile" element={<ViewProfile />} />
+          <Route path="/viewprofile" element={<ViewProfile user={user}/>} />
           <Route path="/linkedinupload" element={<LinkedInFileUpload />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/" element={<Signup/>} />

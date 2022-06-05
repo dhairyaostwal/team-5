@@ -16,7 +16,6 @@ export default function Login({handleLogin}) {
 
   const handleChange = (e)=>{
       const {name,value} = e.target
-
       setLogin({
           ...login,
           [name]:value
@@ -82,8 +81,7 @@ export default function Login({handleLogin}) {
                   onChange={handleChange}
                   placeholder="Enter Email"
                 />
-              </div>
-              
+              </div>    
 
               <div className="form-group">
                 <i class="fa-solid fa-lock"></i>
@@ -104,7 +102,7 @@ export default function Login({handleLogin}) {
                   id="signup"
                   className="form-submit"
                   value="Login"
-                  onSubmit={handleSubmit}
+                  onClick={handleSubmit}
                 />
               </div>
               <div className="form-group">
