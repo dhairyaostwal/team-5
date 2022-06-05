@@ -1,12 +1,12 @@
 import React,{useState, useEffect} from 'react'
 
-function AdminPage() {
+import './AdminPage.css'
 
+function AdminPage() {
 
     const [users,setUsers] = useState([])
 
-
-    useEffect(()=>{
+    const callAPI = ()=>{
         const url = 'http://localhost:8000/api/admin/'
         fetch(url)
         .then(res=>res.json())
@@ -14,6 +14,10 @@ function AdminPage() {
             setUsers(data)
         console.log(data)})  
         .catch(err=>console.log(err))
+    }
+
+    useEffect(()=>{
+        callAPI()
     },[])
 
 
@@ -25,6 +29,8 @@ function AdminPage() {
         .then(res=>res.json())
         .then(data=>setUsers(data))  
         .catch(err=>console.log(err))
+
+        callAPI()
     }
 
 
@@ -36,23 +42,41 @@ function AdminPage() {
         .then(res=>res.json())
         .then(data=>setUsers(data))  
         .catch(err=>console.log(err))
+
+        callAPI()
     }
 
 
   return (
-    <div>
-        <h1>Admin Page</h1>
-        {users.map((user)=>{
-            return(
-            <div>
-                <p>{user.name}</p>
-                <p>{user.email}</p>
-                <button onClick={()=>handleAdmit(user._id)}>Admit</button>
-                <button onClick={()=>handleDelete(user._id)}>Delete</button>
-            </div>
-            )
-        })}
+    <div class="quiz-window">
+        <div class="quiz-window-header">
+            <div class="quiz-window-title">Admin portal</div>
+            <button class="quiz-window-close">&times;</button>
+        </div>
+        <div class="quiz-window-body">
+            <div class="gui-window-awards">
+                <ul class="guiz-awards-row guiz-awards-header">
+                    <li class="guiz-awards-header-star">&nbsp;</li>
+                    <li class="guiz-awards-header-title">UserName</li>
+                    <li class="guiz-awards-header-track">Add</li>
+                    <li class="guiz-awards-header-time">Remove</li>
+                </ul>
 
+                {
+                    users.map((user)=>{
+                        <ul class="guiz-awards-row guiz-awards-row-even">
+                            <li class="guiz-awards-star"><span class="star goldstar"></span></li>
+                            <li class="guiz-awards-title">{user.name}
+                                <div class="guiz-awards-subtitle">{user.email}</div>
+                            </li>
+
+                            <li class="guiz-awards-track"><button class="button-33" role="button">Add</button></li>
+                            <li class="guiz-awards-time"><button class="button-45" role="button">Remove</button></li>
+                        </ul>
+                    })
+                }   
+            </div>
+        </div>
     </div>
   )
 }
