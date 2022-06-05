@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RedeemPoints from './components/RedeemPoints';
 import AdminPage from './AdminPage';
 import React,{useState} from 'react';
+import ViewUsers from './ViewUsers';
+import ViewPosts from './ViewPosts';
 
 function App() {
 
@@ -65,7 +67,9 @@ function App() {
           <Route path="/redeempoints" element={<RedeemPoints />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/viewprofile" element={<ViewProfile user={user}/>} />
+          <Route path="/viewusers" element={<ViewUsers />} />
           <Route path="/linkedinupload" element={<LinkedInFileUpload />} />
+          <Route path="/viewposts" element={<ViewPosts />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/" element={<Signup/>} />
         </Routes>

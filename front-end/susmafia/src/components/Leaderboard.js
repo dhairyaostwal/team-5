@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { GiRank3, GiRank2, GiRank1 } from 'react-icons/gi';
+
+import {Link} from 'react-router-dom';
+
 import './Leaderboard.css';
 
 const Leaderboard = () => {
@@ -71,7 +74,7 @@ const Leaderboard = () => {
           </tr>
         </tbody>
       </table>
-      <button
+      <Link to="/viewusers"
         style={{
           backgroundColor: 'purple',
           color: '#fff',
@@ -83,7 +86,7 @@ const Leaderboard = () => {
         }}
       >
         See More...
-      </button>
+      </Link>
     </div>
   );
 };
