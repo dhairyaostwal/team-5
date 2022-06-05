@@ -7,83 +7,46 @@ import image from '../assets/SusMafia.jpeg';
 const NavbarComponent = () => {
   let navigate = useNavigate();
   const navigateToHome = () => {
-    navigate('/landing'); 
+    navigate('/landing');
   };
   return (
     <div>
-
-
-<Navbar bg="primary" expand="lg">
-  <Container>
-  <Navbar.Brand
+      <Navbar style={{ backgroundColor: '#03402B' }} expand="lg">
+        <Container>
+          <Navbar.Brand
             style={{ cursor: 'pointer', fontWeight: '600', color: '#fff' }}
             onClick={navigateToHome}
           >
-           <img src={image} width={40} height={40} alt="Logo" /> SusMafia
+            <img src={image} width={40} height={40} alt="Logo" /> SusMafia
           </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mx-auto">
-      <Link
-              style={{ fontWeight: 600, color: '#fff' }}
-              className="nav-link"
-              to="/redeempoints"
-            >
-
-              Redeem Points
-            </Link>
-            <Link
-              style={{ fontWeight: 600, color: '#fff' }}
-              className="nav-link"
-              to="/viewprofile"
-            >
-              View Profile
-            </Link>
-            <Link
-              style={{ fontWeight: 600, color: '#fff' }}
-              className="nav-link"
-              to="/login"
-            >
-              Logout
-            </Link>
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mx-auto">
+              <Link
+                style={{ fontWeight: 600, color: '#fff' }}
+                className="nav-link"
+                to="/redeempoints"
+              >
+                Redeem Points
+              </Link>
+              <Link
+                style={{ fontWeight: 600, color: '#fff' }}
+                className="nav-link"
+                to="/viewprofile"
+              >
+                View Profile
+              </Link>
+              <Link
+                style={{ fontWeight: 600, color: '#fff' }}
+                className="nav-link"
+                to="/login"
+              >
+                Logout
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
       {/* <Navbar style={{ backgroundColor: 'green', color: '#fff' }}>
         <Container>
@@ -119,7 +82,7 @@ const NavbarComponent = () => {
           </Nav>
         </Container>
       </Navbar>*/}
-    </div> 
+    </div>
   );
 };
 
