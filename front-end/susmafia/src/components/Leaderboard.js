@@ -29,10 +29,10 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
-          {leadingEntrepreneurs.map(leadingEntrepreneur => {
+          {leadingEntrepreneurs.map((leadingEntrepreneur, index) => {
             return (
               <tr class="">
-              <th scope="row">{/* <GiRank3 size={40} /> */}1</th>
+              <th scope="row">{ index + 1 }</th>
               <td>{ leadingEntrepreneur.name }</td>
               <td>{ leadingEntrepreneur.points }</td>
               <td>Technology</td>
@@ -40,38 +40,7 @@ const Leaderboard = () => {
             )
            
           })}
-          <tr class="">
-            <th scope="row">{/* <GiRank3 size={40} /> */}1</th>
-            <td>Ram</td>
-            <td>40</td>
-            <td>Technology</td>
-          </tr>
-          <tr class="">
-            <th scope="row">{/* <GiRank2 size={40} /> */}2</th>
-            <td>Jacob</td>
-            <td>30</td>
-            <td>Energy</td>
-          </tr>
-          <tr class="">
-            <th scope="row">{/* <GiRank1 size={40} /> */}3</th>
-            <td>Larry</td>
-            <td>26</td>
-            <td>Technology</td>
-          </tr>
-          <tr>
-            <th scope="row" className="">
-              4
-            </th>
-            <td>Larry</td>
-            <td>26</td>
-            <td>Technology</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Larry</td>
-            <td>26</td>
-            <td>Solar Energy</td>
-          </tr>
+          
         </tbody>
       </table>
       <Link to="/viewusers"
