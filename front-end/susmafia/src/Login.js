@@ -104,7 +104,7 @@ export default function Login({handleLogin}) {
                   id="signup"
                   className="form-submit"
                   value="Login"
-                  onSubmit={handleSubmit}
+                  onClick={handleSubmit}
                 />
               </div>
               <div className="form-group">
