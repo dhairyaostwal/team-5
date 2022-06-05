@@ -35,6 +35,13 @@ const NavbarComponent = () => {
             >
               View Profile
             </Link>
+            <Link
+              style={{ fontWeight: 600, color: '#fff' }}
+              className="nav-link"
+              to="/login"
+            >
+              Logout
+            </Link>
           </Nav>
         </Container>
       </Navbar>
