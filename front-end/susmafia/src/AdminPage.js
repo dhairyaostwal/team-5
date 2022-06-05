@@ -27,10 +27,12 @@ function AdminPage() {
             method:'POST'
         })
         .then(res=>res.json())
-        .then(data=>setUsers(data))  
+        .then(data=>{
+            setUsers(data)
+            })  
         .catch(err=>console.log(err))
 
-        callAPI()
+        
     }
 
 
@@ -40,10 +42,11 @@ function AdminPage() {
             method:'DELETE'
         })
         .then(res=>res.json())
-        .then(data=>setUsers(data))  
+        .then(data=>{
+            setUsers(data)
+            })  
         .catch(err=>console.log(err))
 
-        callAPI()
     }
 
 
@@ -63,16 +66,18 @@ function AdminPage() {
                 </ul>
 
                 {
-                    users.map((user)=>{
+                    users?.map((user)=>{
+                        return(
                         <ul class="guiz-awards-row guiz-awards-row-even">
                             <li class="guiz-awards-star"><span class="star goldstar"></span></li>
                             <li class="guiz-awards-title">{user.name}
                                 <div class="guiz-awards-subtitle">{user.email}</div>
                             </li>
 
-                            <li class="guiz-awards-track"><button class="button-33" role="button">Add</button></li>
-                            <li class="guiz-awards-time"><button class="button-45" role="button">Remove</button></li>
+                            <li class="guiz-awards-track"><button class="button-33" role="button" onClick= {()=>handleAdmit(user._id)}>Add</button></li>
+                            <li class="guiz-awards-time"><button class="button-45" role="button" onClick= {()=>handleDelete(user._id)}>Remove</button></li>
                         </ul>
+                        )
                     })
                 }   
             </div>
