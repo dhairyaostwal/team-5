@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BiMessageAlt } from 'react-icons/bi';
 import { FaClipboardCheck } from 'react-icons/fa';
 import { FaAddressCard } from 'react-icons/fa';
 import './ViewProfile.css';
+import NavbarComponent from './NavbarComponent';
 
 function ViewProfile() {
+
+
+
   return (
+    <div>
+    <NavbarComponent />
     <div className="container view_profile_container  m-5">
+      
       <div className="row mt-3">
         <div className="mt-3 col-sm-12 col-md-4 text-center">
           <img
@@ -89,6 +96,7 @@ function ViewProfile() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
