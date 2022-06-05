@@ -22,6 +22,13 @@ const NavbarComponent = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto">
+            <Link
+                style={{ fontWeight: 600, color: '#fff' }}
+                className="nav-link"
+                to="/viewposts"
+              >
+                View Posts
+              </Link>
               <Link
                 style={{ fontWeight: 600, color: '#fff' }}
                 className="nav-link"

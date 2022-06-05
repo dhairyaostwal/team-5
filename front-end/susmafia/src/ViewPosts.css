@@ -1,0 +1,15 @@
+.modal-header{
+    background-color: rgb(151, 241, 211);
+}
+
+.col-11{
+    margin-top: 20px;
+}
+
+.card_css{
+    background-color: aquamarine;
+}
+
+.card_css:hover{
+    box-shadow: 2px solid pink;
+}
