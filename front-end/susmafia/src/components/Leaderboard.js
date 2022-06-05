@@ -4,7 +4,7 @@ import './Leaderboard.css';
 
 const Leaderboard = () => {
 
-  const [leadingEntrepreneurs, setLeadingEntrepreneurs] = useState({})
+  const [leadingEntrepreneurs, setLeadingEntrepreneurs] = useState([])
 
   useEffect(() => {
     const url = 'http://localhost:8000/api/incentives/leaderboard'
@@ -12,7 +12,7 @@ const Leaderboard = () => {
       .then(res => res.json())
       .then(data => setLeadingEntrepreneurs(data))
       .catch(err => console.log(err))
-  }, [leadingEntrepreneurs])
+  }, [])
 
   return (
     <div className="m-5 text-center">

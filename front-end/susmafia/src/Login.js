@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import "./Login.css";
 
 export default function Login() {
 
 
-  let history = useHistory()
+  let history = useNavigate()
   
   const [login,setLogin] = useState({})
 

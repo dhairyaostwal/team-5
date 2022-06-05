@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
 
-import {Link, useHistory} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 
 const Signup = () => {
 
   const [user,setUser] = useState({})
 
-    let history = useHistory()
+    let history = useNavigate()
 
     const handleChange=(e)=>{
         const {name,value} = e.target
@@ -31,12 +31,12 @@ const Signup = () => {
                 headers:{
                     'Content-type':'application/json',
                 },
-                body:JSON.stringify(student)
+                body:JSON.stringify(user)
             })
             .then((response)=> {
                 console.log(response)
                 history.push("/login")
-                setStudent({})
+                setUser({})
             })
             .catch(function(error){
             console.log('ERROR:',error)
