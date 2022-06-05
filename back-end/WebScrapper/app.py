@@ -1,3 +1,4 @@
+from distutils.file_util import write_file
 import os
 import json
 from flask_pymongo import PyMongo
@@ -41,6 +42,14 @@ ALLOWED_EXTENSIONS = set(['pdf'])
 
 
 # flask_cors.CORS(app, expose_headers='Authorization')
+# def write_json(new_data, filename='..linkedinData.json'):
+#     with open(filename,'r+') as file:
+#         file_data = json.load(file)
+#         file_data["userLinkedIn"].append(new_data)
+#         file.seek(0)
+#         json.dump(file_data, file, indent = 4)
+
+
 
 @app.route('/pdf-extract', methods=['POST'])
 def extract_pdf():
@@ -76,6 +85,12 @@ def extract_pdf():
 
     response_with_email = {email: response_data}
     print(response_with_email)
-    db.linkedInData.insert_one(response_with_email)
+    # db.linkedInData.insert_one(response_with_email)
+    # write_file(response_with_email, '..linkedinData.json')
+    with open("linkedinData.json", "r+") as file:
+        data = json.load(file)
+        data.update(response_with_email)
+        file.seek(0)
+        json.dump(data, file)
     print("here")
     return "Pdf received"

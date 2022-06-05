@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { response } = require('express')
 const express = require('express')
 const router = express.Router()
@@ -7,6 +8,7 @@ const bcrypt = require('bcryptjs')
 
 const config = require('config')
 const jwt = require('jsonwebtoken')
+
 
 router.post('/',(req,res)=>{
     const { name,email,password, mobileNo, referralByCode } = req.body
@@ -77,6 +79,43 @@ router.get('/', async(req, res) => {
         res.json(users)
     }catch(err){
         res.status(500).json({ message:err.message })
+    }
+})
+
+function filterByEmail(item, target) {
+    console.log(item.Contact);
+    console.log("t " + target);
+    if (item.Contact[0] === target) {
+        console.log(item.Contact[0]);
+      return true
+    }
+    return false;
+  }
+  
+  
+
+
+router.get('/get-linkedin-data/:id', async(req, res) => {
+    try{
+        const user= await User.findById(req.params.id)
+        if(user == null){
+            return res.status(404).json('Cannot find User')
+        }
+        email = user.email;
+        console.log(email);
+        const data = require('./../../WebScrapper/linkedinData.json');
+        console.log(data);
+        data.forEach(function (arrayItem) {
+            if(arrayItem.Contact[0] === email){
+                res.json(arrayItem);
+            }
+            // console.log(x);
+        });
+        res.json('Cannot find data')
+        // let userData = data.filter(filterByEmail(email))
+        
+    }catch(err){
+        return res.status(500).json({ message:err.message })
     }
 })
 

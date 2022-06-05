@@ -6,7 +6,6 @@ import { FaClipboardCheck } from 'react-icons/fa';
 import { FaAddressCard } from 'react-icons/fa';
 import NavbarComponent from './NavbarComponent';
 import './ViewProfile.css';
-import NavbarComponent from './NavbarComponent';
 
 function ViewProfile() {
 
