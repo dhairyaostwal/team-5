@@ -2,11 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container, Nav, NavLink } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import image from '../assets/SusMafia.jpeg';
 
 const NavbarComponent = () => {
   let navigate = useNavigate();
   const navigateToHome = () => {
-    navigate('/landing');
+    navigate('/landing'); 
   };
   return (
     <div>
@@ -16,7 +17,7 @@ const NavbarComponent = () => {
             style={{ cursor: 'pointer', fontWeight: '600', color: '#fff' }}
             onClick={navigateToHome}
           >
-            SusMafia
+           <img src={image} width={40} height={40} alt="Logo" /> SusMafia
           </Navbar.Brand>
           <Nav className="mx -auto">
             <Link
@@ -24,7 +25,8 @@ const NavbarComponent = () => {
               className="nav-link"
               to="/redeempoints"
             >
-              Redeeem points
+
+              Redeem Points
             </Link>
             <Link
               style={{ fontWeight: 600, color: '#fff' }}
