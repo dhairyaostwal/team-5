@@ -1,4 +1,7 @@
 import React,{useState, useEffect} from 'react'
+
+import {Link} from 'react-router-dom';
+
 import './NeedsHelp.css';
 
 const NeedHelp = () => {
@@ -41,7 +44,7 @@ const NeedHelp = () => {
         )
       })}
       <center>
-        <button
+        <Link
           style={{
             backgroundColor: 'purple',
             color: '#fff',
@@ -53,7 +56,7 @@ const NeedHelp = () => {
           }}
         >
           See More...
-        </button>
+        </Link>
       </center>
     </div>
   );
