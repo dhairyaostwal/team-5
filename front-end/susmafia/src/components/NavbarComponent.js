@@ -25,7 +25,8 @@ const NavbarComponent = () => {
               className="nav-link"
               to="/redeempoints"
             >
-              Redeem points
+
+              Redeem Points
             </Link>
             <Link
               style={{ fontWeight: 600, color: '#fff' }}
