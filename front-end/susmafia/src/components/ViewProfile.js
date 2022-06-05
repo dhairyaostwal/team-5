@@ -86,14 +86,20 @@ function ViewProfile() {
         </div>
         <div className="row ">
           <div className="mt-4 col-sm-12 col-md-4">
-            <h4 className="mt-3 text-muted">
-              How Helpful Entrepreneur is? <hr />
+            <h4 className="mt-3">
+              What Other Entrepreneurs say? <hr />
             </h4>
-            <h2>Spotify Newyork</h2>
-            <p>
-              170 William Street<br></br>
-              New york, NY 10038-312-51
-            </p>
+            {/* <h2>Spotify Newyork</h2> */}
+            <div className="talk-bubble tri-right round border right-top">
+              <div className="talktext">
+                <p>Very Helpful and down to earth</p>
+              </div>
+            </div>
+            <div className="talk-bubble tri-right round border right-top">
+              <div className="talktext">
+                <p>He's been a big inspiration for me to start my business</p>
+              </div>
+            </div>
           </div>
           <div className="mt-4 col-sm-12 col-md-8">
             <h3 className="mb-3">
