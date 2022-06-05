@@ -47,13 +47,16 @@ const Contacts = () => {
         </thead>
         <tbody>
         {allUserData.map((user)=>{
-          <tr class="">
+          return(
+<tr class="">
           <th scope="row">{/* <GiRank3 size={40} /> */}1</th>
           <td>{ user.name }</td>
           <td>Technology</td>
           <td><button>Profile</button></td>
         </tr>
 
+          )
+          
 
         })}
 

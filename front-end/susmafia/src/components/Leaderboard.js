@@ -27,12 +27,15 @@ const Leaderboard = () => {
         </thead>
         <tbody>
           {leadingEntrepreneurs.map(leadingEntrepreneur => {
-            <tr class="">
+            return (
+              <tr class="">
               <th scope="row">{/* <GiRank3 size={40} /> */}1</th>
               <td>{ leadingEntrepreneur.name }</td>
               <td>{ leadingEntrepreneur.points }</td>
               <td>Technology</td>
             </tr>
+            )
+           
           })}
           <tr class="">
             <th scope="row">{/* <GiRank3 size={40} /> */}1</th>
