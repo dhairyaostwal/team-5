@@ -66,7 +66,7 @@ function ViewProfile() {
               <AiFillStar color="rgb(77, 195, 255)" />
             </span>
             <br />
-            <label>
+            <label style={{ justifyContent: 'center' }}>
               -10{' '}
               <img style={{ width: '1.2rem', height: 'auto' }} src={LeetCoin} />
               every time
