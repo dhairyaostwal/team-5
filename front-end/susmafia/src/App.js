@@ -9,6 +9,8 @@ import RedeemPoints from './components/RedeemPoints';
 import AdminPage from './AdminPage';
 import React,{useState} from 'react';
 
+import ViewPosts from './ViewPosts';
+
 function App() {
 
   const [isLogin,setIsLogin] = useState(false)
@@ -66,6 +68,7 @@ function App() {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/viewprofile" element={<ViewProfile user={user}/>} />
           <Route path="/linkedinupload" element={<LinkedInFileUpload />} />
+          <Route path="/viewposts" element={<ViewPosts />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/" element={<Signup/>} />
         </Routes>
