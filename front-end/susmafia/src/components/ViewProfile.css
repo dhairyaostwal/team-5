@@ -1,19 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 .field_name {
-  color: rgb(77, 195, 255);
+  color: #3C2C3E;
+  font-weight: 600;
 }
 
 .profile_contacts {
-  color: rgb(77, 195, 255);
+  color: #3C2C3E;
   font-weight: bold;
-  background-color: rgb(192, 234, 255);
+  background-color: #C7D36F;
 }
 
 .view_profile_container {
-  border: 2px solid rgb(77, 195, 255);
+  border: 2px solid #3C2C3E;
+  margin-bottom: 0.5rem;
 }
 
 .col-8 {
-  color: rgb(66, 227, 255);
+  color: #3C2C3E;
   margin-top: 10px;
 }
 .col-4 {
