@@ -37,6 +37,17 @@ router.post('/add-points',auth, async(req, res) => {
 
 })
 
+router.get('/all-users', (req, res) => {
+    User.find().sort({
+        points: -1
+    }).then(user => {
+        res.json(user)
+    }).catch(err => {
+        res.status(500).json({
+            message: err.message
+        })
+    })
 
+})
 
 module.exports = router
