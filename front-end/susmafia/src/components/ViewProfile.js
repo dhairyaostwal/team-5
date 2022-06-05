@@ -9,7 +9,7 @@ import LeetCoin from './../assets/LeetCoin.png';
 import DhairyaSq from './../assets/dhairyaSq.png';
 import './ViewProfile.css';
 
-function ViewProfile() {
+function ViewProfile({user}) {
 
 
 
@@ -30,7 +30,7 @@ function ViewProfile() {
             <img src={DhairyaSq} height="auto" width={350} alt="" />
           </div>
           <div className="mt-3 col-sm-12 col-md-8">
-            <h2>Rahul Bose</h2>
+            <h2>{user.name}</h2>
             <p className="field_name">Technology Entrepreneur</p>
 
             <h4>
@@ -110,11 +110,11 @@ function ViewProfile() {
             </h3>
             <div className="row mb-5">
               <div className="col-4">Phone: </div>
-              <div className="col-8">+919658458755</div>
+              <div className="col-8">{user.mobileNo}</div>
               <div className="col-4">Location: </div>
               <div className="col-8">Newyork City</div>
               <div className="col-4">E-Mail: </div>
-              <div className="col-8">hasan@gmail.com</div>
+              <div className="col-8">{user.email}</div>
             </div>
           </div>
         </div>
