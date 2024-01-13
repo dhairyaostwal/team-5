@@ -5,3 +5,5 @@ Team*.zip
 *.key
 *.ovpn
 node_modules/
+.DS_Store
+METADATA
